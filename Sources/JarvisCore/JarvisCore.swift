@@ -1,4 +1,5 @@
 import Foundation
+import Files
 
 public final class JarvisCore {
     private let arguments: [String]
@@ -9,6 +10,24 @@ public final class JarvisCore {
     }
     
     public func run() throws {
-        print("Hello world")
+        guard arguments.count > 1 else {
+            throw Error.missingFileName
+        }
+        
+        let fileName = arguments[1]
+        
+        do {
+            try FileSystem().createFile(at: fileName)
+        } catch {
+            throw Error.failedToCreateFile
+        }
+    }
+}
+
+
+public extension JarvisCore {
+    enum Error: Swift.Error {
+        case missingFileName
+        case failedToCreateFile
     }
 }
