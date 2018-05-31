@@ -1,0 +1,15 @@
+# iOS CircleCI 2.0 configuration file
+
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "9.3.1"
+
+    steps:
+      - checkout
+      - run: swift build
+      - run: swift test
+
