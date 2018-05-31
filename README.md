@@ -1,7 +1,6 @@
 # Jarvis
 [![Build Status](https://travis-ci.com/spprichard/Jarvis.svg?branch=master)](https://travis-ci.com/spprichard/Jarvis)
 
-The thing that does all the things:
 First iteration would be a CLI that answer some basic questions. The goal here is that Jarvis would provide mwe the information I want, when prompted. A nice to have at this step would be the storeage of meta-data about the questions asked. That would be like time of day, questions asked in 1 session, etc. The hope here is that this information would be used to help predict when I will ask a future question, and given me the information I want before I ask. This could start as desktop notifications, then evolove into a always on desktop app. 
 
 
