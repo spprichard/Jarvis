@@ -14,13 +14,23 @@ public final class JarvisCore {
             throw Error.missingFileName
         }
         
-        let fileName = arguments[1]
+        let command = arguments[1]
         
-        do {
-            try FileSystem().createFile(at: fileName)
-        } catch {
-            throw Error.failedToCreateFile
+        // this feels like it should be an enum
+        switch command {
+        case "file":
+            print("file stuff")
+        case "alert":
+            Notify.showNotification()
+        default:
+            print("help")
         }
+        
+//        do {
+//            try FileSystem().createFile(at: fileName)
+//        } catch {
+//            throw Error.failedToCreateFile
+//        }
     }
 }
 
